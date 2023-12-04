@@ -1,4 +1,14 @@
 "use strict";
+function makeArray(firstArray, secondArray, maxLength) {
+  let newArray = firstArray.slice();
+  newArray = newArray.concat(secondArray);
+
+  if (newArray.length > maxLength) {
+    newArray = newArray.slice(0, maxLength);
+  }
+
+  return newArray;
+}
 
 console.log(makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3)); // ["Mango", "Poly", "Ajax"]
 console.log(makeArray(["Mango", "Poly", "Houston"], ["Ajax", "Chelsea"], 4)); // ["Mango", "Poly", "Houston", "Ajax"]
